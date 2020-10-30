@@ -1,5 +1,8 @@
 package ru.bmstu.parralel.lab2;
 
-public class AirportGroupingComparator extends {
+
+import org.apache.hadoop.io.WritableComparator;
+
+public class AirportGroupingComparator extends WritableComparator {
 
 }
