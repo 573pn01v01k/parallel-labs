@@ -13,7 +13,6 @@ hs_err_pid*
 .idea/
 *.iml
 *.iws
-f
 # Maven
 output/
 target/
