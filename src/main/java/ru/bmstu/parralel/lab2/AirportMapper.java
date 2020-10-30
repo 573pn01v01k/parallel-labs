@@ -8,22 +8,19 @@ import org.apache.hadoop.yarn.webapp.hamlet.Hamlet;
 import java.io.IOException;
 
 public class AirportMapper extends Mapper<LongWritable, Text, AirportKey, Text> {
-    private static final int DEST_AIRPORT_ID = 14;
-    private static final int ARRIVAL_DELAY = 18;
+    private static final int AIRPORT_CODE = 0;
+    private static final int AIRPORT_NAME = 1;
 
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        String fields[];
-        int airportID;
-        float arrivalDelay;
+        String strings[];
+        int airportName;
+        float airportCode;
 
         if (key.get() == 0) {
             return;
         }
-        arrivalDelay = 0;
-        fields = value.toString().replace("\"", "").split(",");
-        if (!fields[ARRIVAL_DELAY].isEmpty()) {
-            arrivalDelay = Float.parseFloat(fields[ARRIVAL_DELAY]);
-        }
+        strings = value.toString().replace("\"", "").split(",", 2);
+        airportCode = Integer.parseInt(strings[AIRPORT_CODE]);
         if(arrivalDelay > 0){
             airportID = Integer.parseInt(fields[DEST_AIRPORT_ID]);
             context.write(new AirportKey(airportID, false), new Text(Float.toString(arrivalDelay)));
