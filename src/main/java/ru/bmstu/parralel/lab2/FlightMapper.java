@@ -19,8 +19,8 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportKey, Text> {
             return;
         }
         fields = value.toString().replace("\"", "").split(",");
-        arrivalDelay = Float.parseFloat(fields[18]);
-        if(!fields[ARRIVAL_DELAY].isEmpty()){
+        arrivalDelay = Float.parseFloat(fields[ARRIVAL_DELAY]);
+        if(!arrivalDelay == "", {
             arrivalDelay =
         }
     }
