@@ -13,8 +13,9 @@ hs_err_pid*
 .idea/
 *.iml
 *.iws
+f
 # Maven
-output/
+output/start
 target/
 
 # Compiled Files
