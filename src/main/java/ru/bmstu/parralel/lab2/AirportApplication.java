@@ -16,7 +16,7 @@ public class AirportApplication {
         job.setJobName("AirportApplication");
 
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, FlightMapper.class);
-        
+
 
     }
 }
