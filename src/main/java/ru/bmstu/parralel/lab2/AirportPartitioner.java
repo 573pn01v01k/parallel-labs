@@ -1,4 +1,5 @@
 package ru.bmstu.parralel.lab2;
 
-public class AirportPartitioner {
+public class AirportPartitioner extends Partitioner<AirportKey, {
+
 }
