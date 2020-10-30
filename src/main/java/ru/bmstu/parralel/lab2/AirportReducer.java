@@ -13,7 +13,7 @@ public class AirportReducer extends Reducer<AirportKey, Text, Text, Text> {
         Iterator<Text> iter = values.iterator();
         String airportName = iter.next().toString();
         float current = 0;
-        int count = 0;
+        float count = 0;
         float min = Float.MAX_VALUE;
         float max = 0;
         float avg = 0;
@@ -23,7 +23,12 @@ public class AirportReducer extends Reducer<AirportKey, Text, Text, Text> {
         }
 
         while(iter.hasNext()){
-            current = Float.parseFloat(iter.next().toString())
+            current = Float.parseFloat(iter.next().toString());
+            min = Math.min(min, current);
+            max = Math.max(max, current);
+            avg = (avg * count + current) / ++count;
         }
+
+        String output = String.format("%s - min: %f, avg: %")
     }
 }
