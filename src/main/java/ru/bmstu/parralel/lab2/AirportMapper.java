@@ -22,6 +22,6 @@ public class AirportMapper extends Mapper<LongWritable, Text, AirportKey, Text> 
         strings = value.toString().replace("\"", "").split(",", 2);
         airportCode = Integer.parseInt(strings[AIRPORT_CODE]);
         airportName = strings[AIRPORT_NAME];
-        context.write(new AirportKey(airportCode, true), new Text(Float.toString(arrivalDelay)));
+        context.write(new AirportKey(airportCode, true), new Text(airportName));
     }
 }
