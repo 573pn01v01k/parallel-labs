@@ -35,5 +35,6 @@ public class AirportKey implements WritableComparable<AirportKey>{
         airportID = dataInput.readInt();
         indicator = dataInput.readBoolean();
     }
+    public void getId()
 }
 
