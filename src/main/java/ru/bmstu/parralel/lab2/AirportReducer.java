@@ -29,6 +29,7 @@ public class AirportReducer extends Reducer<AirportKey, Text, Text, Text> {
             avg = (avg * count + current) / ++count;
         }
 
-        String output = String.format("%s - min: %f, avg: %")
+        String output = String.format("%s - min: %f, avg: %f, max: %f", airportName, min, avg, max);
+        context.write(new Text(key.getId()), new Text(output))
     }
 }
