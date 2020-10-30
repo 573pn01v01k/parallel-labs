@@ -26,7 +26,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportKey, Text> {
         }
         if(arrivalDelay > 0){
             airportID = Integer.parseInt(fields[DEST_AIRPORT_ID]);
-            context.write(new AirportKey(airportID, false, new Text(Float.toString(arrivalDelay))))
+            context.write(new AirportKey(airportID, false), new Text(Float.toString(arrivalDelay)));
         }
     }
 }
