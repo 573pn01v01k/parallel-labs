@@ -26,13 +26,14 @@ public class AirportKey implements WritableComparable<AirportKey>{
 
     @Override
     public void write(DataOutput dataOutput) throws IOException {
-
+        dataOutput.writeInt(airportID);
+        dataOutput.writeBoolean(indicator);
     }
 
     @Override
     public void readFields(DataInput dataInput) throws IOException {
-
+        airportID = dataInput.readInt();
+        indicator = dataInput.readBoolean();
     }
-} {
-
 }
+
