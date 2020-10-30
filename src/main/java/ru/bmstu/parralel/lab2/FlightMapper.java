@@ -1,5 +1,8 @@
 package ru.bmstu.parralel.lab2;
 
-public class FlightMapper {
-    
+import org.apache.hadoop.io.LongWritable;
+
+public class FlightMapper extends Mapper<LongWritable, Text,
+        > {
+
 }
