@@ -13,17 +13,15 @@ public class AirportMapper extends Mapper<LongWritable, Text, AirportKey, Text> 
 
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String strings[];
-        int airportName;
-        float airportCode;
+        String airportName;
+        int airportCode;
 
         if (key.get() == 0) {
             return;
         }
         strings = value.toString().replace("\"", "").split(",", 2);
         airportCode = Integer.parseInt(strings[AIRPORT_CODE]);
-        if(arrivalDelay > 0){
-            airportID = Integer.parseInt(fields[DEST_AIRPORT_ID]);
-            context.write(new AirportKey(airportID, false), new Text(Float.toString(arrivalDelay)));
-        }
+        airportName = strings[AIRPORT_NAME];
+        context.write(new AirportKey(airportCode, true), new Text(Float.toString(arrivalDelay)));
     }
 }
