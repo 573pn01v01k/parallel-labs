@@ -7,7 +7,8 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 public class AirportKey implements WritableComparable<AirportKey>{
-    Boolean 
+    Boolean indicator;
+    
     @Override
     public int compareTo(AirportKey o) {
         return 0;
