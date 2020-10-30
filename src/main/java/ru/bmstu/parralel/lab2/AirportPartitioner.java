@@ -7,6 +7,6 @@ public class AirportPartitioner extends Partitioner<AirportKey, Text> {
 
     @Override
     public int getPartition(AirportKey airportKey, Text text, int i) {
-        return ((Integer.hashCode(airportKey.airportID) & Integer.MAX_VALUE) )
+        return ((Integer.hashCode(airportKey.airportID) & Integer.MAX_VALUE) % i);
     }
 }
