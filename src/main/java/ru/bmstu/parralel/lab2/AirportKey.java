@@ -18,7 +18,9 @@ public class AirportKey implements WritableComparable<AirportKey>{
     }
     @Override
     public int compareTo(AirportKey o) {
-        if(airportID == o.airportID)
+        if(airportID == o.airportID) {
+            return 
+        }
     }
 
     @Override
