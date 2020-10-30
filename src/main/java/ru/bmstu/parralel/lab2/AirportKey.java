@@ -8,10 +8,17 @@ import java.io.IOException;
 
 public class AirportKey implements WritableComparable<AirportKey>{
     Boolean indicator;
-    
+    int airportID;
+
+    AirportKey() {}
+
+    AirportKey(int airportID, Boolean indicator){
+        this.indicator = indicator;
+        this.airportID = airportID;
+    }
     @Override
     public int compareTo(AirportKey o) {
-        return 0;
+        return ;
     }
 
     @Override
